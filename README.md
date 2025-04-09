@@ -60,7 +60,7 @@ Implemented a modular pipeline via `extract_all_features()`, which called:
 - For `Summary`: ```TfidfVectorizer(max_features=200, ngram_range=(1,1))```
 - Combined structured and TF-IDF features via ```scipy.sparse.hstack```
 
-## ⚙️ 3. Model Creation & Assumptions
+## ⚙️ Model Creation & Assumptions
 
 ### Assumptions
 - Strong correlation between emotional tone (sentiment) and star rating
@@ -82,7 +82,7 @@ Each model was trained using:
 - 75/25 train-test split
 - Evaluation via 3-fold Stratified CV and confusion matrix
 
-### 🔧 4. Model Tuning
+## 🔧 Model Tuning
 - ```SelectKBest(f_classif, k=100)``` for feature selection
 - ```TruncatedSVD(n_components=90)``` for dimensionality reduction
 - ```StandardScaler()``` for scaling
@@ -90,7 +90,7 @@ Each model was trained using:
 - Attempted ```GridSearchCV``` but stopped due to runtime issues
 
 
-## 📊 Model Evaluation
+## 📊 Model Performance & Evaluation
 
 | Model               | CV Accuracy | Test Accuracy |
 |--------------------|-------------|----------------|
